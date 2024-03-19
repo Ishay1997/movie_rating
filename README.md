@@ -47,6 +47,7 @@ When I write a movie name, I get all the movies with this name in (TMDb) API](ht
 
 4. **Sort by Rating:** Movies are sorted based on their ratings, allowing users to quickly identify highly rated movies.
 
+ 
 **Technologies Used:**
 
 - **Flask:** The web application is built using Flask, a lightweight Python web framework.
@@ -57,6 +58,7 @@ When I write a movie name, I get all the movies with this name in (TMDb) API](ht
 
 - **Bootstrap:** Bootstrap is utilized for frontend design and layout, ensuring a responsive and visually appealing user interface.
 
+
 **Usage:**
 
 1. **Browse Movies:** Users can navigate through the list of movies displayed on the website.
@@ -64,6 +66,7 @@ When I write a movie name, I get all the movies with this name in (TMDb) API](ht
 2. **Add Reviews:** Users can share their opinions by adding reviews and ratings for movies they have watched.
 
 3. **Sort Movies:** Movies are sorted based on their ratings, making it convenient for users to discover top-rated movies.
+
 
 **Installation:**
 
@@ -75,9 +78,11 @@ When I write a movie name, I get all the movies with this name in (TMDb) API](ht
 
 4. Access the website through your web browser at the provided URL.
 
+
 **Contributing:**
 
 Contributions to the movie rating and review website project are welcome! Feel free to fork the repository, make improvements, and submit pull requests.
+
 
 **License:**
 
