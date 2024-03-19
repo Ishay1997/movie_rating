@@ -11,6 +11,7 @@ The Movie Rating and Review Website is a Flask-based web application that allows
 - Thanks to the creators of Flask, SQLAlchemy, and Bootstrap for their excellent tools and documentation.
 - Special thanks to [The Movie Database (TMDb) API](https://developer.themoviedb.org/) for providing movie data.
 
+
 **photos with explanation:**
 
 On the home page, all movies are sorted by ranking from the most recommended
@@ -81,6 +82,7 @@ Contributions to the movie rating and review website project are welcome! Feel f
 **License:**
 
 This project is licensed under the MIT License. See the LICENSE file for more details.
+
 
 **Contact:**
 
