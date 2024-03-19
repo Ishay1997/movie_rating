@@ -4,8 +4,12 @@
 
 {% block content %}
 <div class="container">
-  <h1 class="heading">My Top 10 Movies</h1>
-  <p class="description">These are my all-time favourite movies.</p>
+  <h1 class="heading">My Top Movies</h1>
+  <p class="description">
+      {% if not movies %}
+        There are no movies connected to this search.
+      {% endif %}</p>
+
     {% for movie in movies|reverse %}
   <div class="card" >
     <div class="front" style="background-image: url('{{movie.img_url}}');">
@@ -33,7 +37,10 @@
     {% endfor %}
 </div>
 <div class="container text-center add">
+
+<a href="{{url_for('home')}}" class="button">Home Page</a>
 <a href="{{url_for('add')}}" class="button">Add Movie</a>
+<a href="{{url_for('movies_by_actor')}}" class="button">Search movies by actor</a>
 </div>
 
 {% endblock %}

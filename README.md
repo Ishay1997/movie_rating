@@ -44,6 +44,8 @@ When I write a movie name, I get all the movies with this name in (TMDb) API](ht
 
 4. **Sort by Rating:** Movies are sorted based on their ratings, allowing users to quickly identify highly rated movies.
 
+5. **Search Movies by Actor:** Users can search for all the movies that an actor has appeared in by clicking the "Search Movies by Actor" button. This feature integrates with the TMDb API to fetch movies related to the actor.
+
  
 **Technologies Used:**
 - **Flask:** The web application is built using Flask, a lightweight Python web framework.

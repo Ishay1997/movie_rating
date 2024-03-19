@@ -10,6 +10,7 @@ import requests
 from sqlalchemy import desc
 
 base_url = "https://api.themoviedb.org/3"
+endpoint = "/search/movie"
 api_key = "08e59cab0e956e5281488721d1f42d4d"
 # api_key = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwOGU1OWNhYjBlOTU2ZTUyODE0ODg3MjFkMWY0MmQ0ZCIsInN1YiI6IjY1Zjg1MWRkMThiNzUxMDE2NWY2YzI3OSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.vHErORiBK6dr_h552_wJOOiuNBpfnLp3kQrKdC54_CY"
 '''
@@ -47,6 +48,10 @@ class FindMovieForm(FlaskForm):
     title = StringField("Movie Title", validators=[DataRequired()])
     submit = SubmitField("Add Movie")
 
+# New Find Movie Form
+class FindMoviesFormByActor(FlaskForm):
+    name = StringField("Actor Name", validators=[DataRequired()])
+    submit = SubmitField("Search")
 
 class Movie(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -54,7 +59,8 @@ class Movie(db.Model):
     year = db.Column(db.Integer, nullable=False)
     description = db.Column(db.String, nullable=False)
     rating = db.Column(db.Float, nullable=False)
-    ranking = db.Column(db.Integer, unique=True)
+    ranking = db.Column(db.Integer, nullable=True)
+    # unique=True
     review = db.Column(db.String(250), nullable=False)
     img_url = db.Column(db.String(500), nullable=False)
 
@@ -108,7 +114,7 @@ def find_movie():
             title=data['title'],
             year=data['release_date'].split('-')[0],  # Extracting the year from release date
             description=data['overview'],
-            rating=0.0,  # You might want to handle this differently
+            rating=data['popularity'],  # You might want to handle this differently
             ranking=None,  # You might want to handle this differently
             review="",  # You might want to handle this differently
             img_url=f"https://image.tmdb.org/t/p/w500/{data['poster_path']}" if data['poster_path'] else ""
@@ -128,7 +134,6 @@ def add():
         movie_title = form.title.data
 
         # Define the base URL and endpoint
-        endpoint = "/search/movie"
 
         # Parameters for the search query
         params = {
@@ -151,6 +156,42 @@ def delete(id):
     db.session.commit()
     return redirect(url_for("home"))
 
+
+@app.route("/movies_by_actor", methods=["GET", "POST"])
+def movies_by_actor():
+    form = FindMoviesFormByActor()
+    list = []
+    if form.validate_on_submit():
+
+        actor_name = form.name.data
+        params = {
+            "api_key": api_key,
+            "query": actor_name,
+            "language": "en-US"
+        }
+
+        # Make the GET request to search for movies
+        response = requests.get(f"{base_url}{endpoint}", params=params)
+        movies = response.json()["results"]
+        for index, data in enumerate(reversed(movies), start=1):
+            new_movie = Movie(
+                id=data['id'],
+                title=(data['title'].split('/')[1].strip() if '/' in data['title'] else
+                             data['title'].split(':')[1].strip() if ':' in data['title'] else
+                             data['title']),
+                year=data['release_date'].split('-')[0],  # Extracting the year from release date
+                description=data['overview'],
+                rating=data['popularity'],  # You might want to handle this differently
+                ranking=0,  # You might want to handle this differently
+                review="",  # You might want to handle this differently
+                img_url=f"https://image.tmdb.org/t/p/w500/{data['poster_path']}" if data['poster_path'] else ""
+            )
+            list.append(new_movie)
+            list = sorted(list, key=lambda x: x.rating)
+            for index, movie in enumerate(list, start=1):
+                movie.ranking = len(list) - index + 1
+        return render_template("index.html", movies=list)
+    return render_template("get_actor_name.html", form=form)
 
 if __name__ == '__main__':
     app.run(debug=True)
