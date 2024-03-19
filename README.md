@@ -7,13 +7,11 @@ The Movie Rating and Review Website is a Flask-based web application that allows
 
 
 **Acknowledgements:**
-
 - Thanks to the creators of Flask, SQLAlchemy, and Bootstrap for their excellent tools and documentation.
 - Special thanks to [The Movie Database (TMDb) API](https://developer.themoviedb.org/) for providing movie data.
 
 
 **photos with explanation:**
-
 On the home page, all movies are sorted by ranking from the most recommended
 
 ![front card](photos/Front_Card.PNG)
@@ -38,7 +36,6 @@ When I write a movie name, I get all the movies with this name in (TMDb) API](ht
 
 
 **Key Features:**
-
 1. **Explore Movies:** Users can browse through a collection of movies fetched from the [TMDb API](https://developer.themoviedb.org/).
 
 2. **View Details:** Each movie entry displays details such as title, description, release year, and associated image.
@@ -49,7 +46,6 @@ When I write a movie name, I get all the movies with this name in (TMDb) API](ht
 
  
 **Technologies Used:**
-
 - **Flask:** The web application is built using Flask, a lightweight Python web framework.
   
 - **SQLAlchemy:** SQLAlchemy is used to interact with the SQLite database, storing information about movies, reviews, and ratings.
@@ -60,7 +56,6 @@ When I write a movie name, I get all the movies with this name in (TMDb) API](ht
 
 
 **Usage:**
-
 1. **Browse Movies:** Users can navigate through the list of movies displayed on the website.
   
 2. **Add Reviews:** Users can share their opinions by adding reviews and ratings for movies they have watched.
@@ -69,7 +64,6 @@ When I write a movie name, I get all the movies with this name in (TMDb) API](ht
 
 
 **Installation:**
-
 1. Clone the repository to your local machine.
   
 2. Install the required dependencies using `pip install -r requirements.txt`.
@@ -80,15 +74,12 @@ When I write a movie name, I get all the movies with this name in (TMDb) API](ht
 
 
 **Contributing:**
-
 Contributions to the movie rating and review website project are welcome! Feel free to fork the repository, make improvements, and submit pull requests.
 
 
 **License:**
-
 This project is licensed under the MIT License. See the LICENSE file for more details.
 
 
 **Contact:**
-
 For questions or inquiries, please contact Ishay at ishaylevy8@gmail.com.
