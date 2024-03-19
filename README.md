@@ -1,5 +1,5 @@
 **Project Description:**
-Title: Movie Rating and Review Website
+# Movie Rating and Review Website
 ![front card](photos/Front_Card.PNG)
 
 **Overview:**
