@@ -1,25 +1,23 @@
 **Project Description:**
 # Movie Rating and Review Website
-![front card](photos/Front_Card.PNG)
-
 **Overview:**
 
 The Movie Rating and Review Website is a Flask-based web application that allows users to explore and rate movies. It integrates with the [The Movie Database (TMDb) API](https://developer.themoviedb.org/) to fetch movie data and provides a platform for users to add their reviews and ratings.
 
 **Key Features:**
 
-1. **Explore Movies:** Users can browse through a collection of movies fetched from [TMDb API](https://developer.themoviedb.org/).
+1. **Explore Movies:** Users can browse through a collection of movies fetched from the [TMDb API](https://developer.themoviedb.org/).
 
 2. **View Details:** Each movie entry displays details such as title, description, release year, and associated image.
 
-3. **Add Reviews and Ratings:** Users can add their reviews and ratings for movies listed on the website.
+3. **Add reviews and ratings: ** Users can add their reviews and ratings for movies listed on the website.
 
 4. **Sort by Rating:** Movies are sorted based on their ratings, allowing users to quickly identify highly rated movies.
 
 **Technologies Used:**
 
 - **Flask:** The web application is built using Flask, a lightweight Python web framework.
-  
+  
 - **SQLAlchemy:** SQLAlchemy is used to interact with the SQLite database, storing information about movies, reviews, and ratings.
 
 - **External API Integration:** The application connects to the [The Movie Database (TMDb) API](https://developer.themoviedb.org/) to fetch movie data, including titles, descriptions, release years, and images.
@@ -29,7 +27,7 @@ The Movie Rating and Review Website is a Flask-based web application that allows
 **Usage:**
 
 1. **Browse Movies:** Users can navigate through the list of movies displayed on the website.
-  
+  
 2. **Add Reviews:** Users can share their opinions by adding reviews and ratings for movies they have watched.
 
 3. **Sort Movies:** Movies are sorted based on their ratings, making it convenient for users to discover top-rated movies.
@@ -37,7 +35,7 @@ The Movie Rating and Review Website is a Flask-based web application that allows
 **Installation:**
 
 1. Clone the repository to your local machine.
-  
+  
 2. Install the required dependencies using `pip install -r requirements.txt`.
 
 3. Run the Flask application using `python app.py`.
@@ -46,7 +44,7 @@ The Movie Rating and Review Website is a Flask-based web application that allows
 
 **Contributing:**
 
-Contributions to the Movie Rating and Review Website project are welcome! Feel free to fork the repository, make improvements, and submit pull requests.
+Contributions to the movie rating and review website project are welcome! Feel free to fork the repository, make improvements, and submit pull requests.
 
 **License:**
 
@@ -55,9 +53,14 @@ This project is licensed under the MIT License. See the LICENSE file for more de
 **Acknowledgements:**
 
 - Thanks to the creators of Flask, SQLAlchemy, and Bootstrap for their excellent tools and documentation.
-
 - Special thanks to [The Movie Database (TMDb) API](https://developer.themoviedb.org/) for providing movie data.
 
 **Contact:**
 
 For questions or inquiries, please contact Ishay at ishaylevy8@gmail.com.
+![front card](photos/Front_Card.PNG)
+On the home page, all movies are sorted by ranking from the most recommended
+![back card](photos/Back_Card.PNG)
+When I point at the card, he shows me the information about this movie.
+![api results](photos/Api_Results.PNG)
+When I write a movie name, I get all the movies with this name in (TMDb) API](https://developer.themoviedb.org/) and choose the one I want to add.
