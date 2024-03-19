@@ -58,9 +58,18 @@ This project is licensed under the MIT License. See the LICENSE file for more de
 **Contact:**
 
 For questions or inquiries, please contact Ishay at ishaylevy8@gmail.com.
-![front card](photos/Front_Card.PNG)
+
 On the home page, all movies are sorted by ranking from the most recommended
-![back card](photos/Back_Card.PNG)
+![front card](photos/Front_Card.PNG)
+
+
 When I point at the card, he shows me the information about this movie.
-![api results](photos/Api_Results.PNG)
+![back card](photos/Back_Card.PNG)
+
+
+When I write a movie name, I want to add it to the movies on the website.
+![api results](photos/Add.PNG)
+
+
 When I write a movie name, I get all the movies with this name in (TMDb) API](https://developer.themoviedb.org/) and choose the one I want to add.
+![api results](photos/Api_Results.PNG)
