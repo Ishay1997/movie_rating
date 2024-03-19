@@ -7,6 +7,7 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField
 from wtforms.validators import DataRequired
 import requests
+from sqlalchemy import desc
 
 base_url = "https://api.themoviedb.org/3"
 api_key = "08e59cab0e956e5281488721d1f42d4d"
@@ -40,6 +41,7 @@ db = SQLAlchemy(model_class=Base)
 db.init_app(app)
 
 
+
 # New Find Movie Form
 class FindMovieForm(FlaskForm):
     title = StringField("Movie Title", validators=[DataRequired()])
@@ -63,15 +65,19 @@ with app.app_context():
 
 @app.route("/")
 def home():
+    # Query the movies from the database and sort them by rating
     result = db.session.execute(db.select(Movie).order_by(Movie.rating))
     all_results = result.scalars().all()
     for movie in all_results:
         movie.ranking = None
-
-    for i in range(len(all_results)):
-        all_results[i].ranking = len(all_results) - i
     db.session.commit()
 
+    # Assign unique rankings to movies
+    for i, movie in enumerate(all_results):
+        movie.ranking = len(all_results) - i
+
+    # Commit the changes to the database
+    db.session.commit()
 
     return render_template("index.html", movies=all_results)
 
