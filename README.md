@@ -1,6 +1,6 @@
 **Project Description:**
-![Alt Text]("../photos/Front_Card.PNG")
 Title: Movie Rating and Review Website
+![front card](photos/Front_Card.PNG)
 
 **Overview:**
 
